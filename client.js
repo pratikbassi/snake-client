@@ -1,5 +1,10 @@
 const net = require('net');
 
+const moveUp = (times, conn) => {
+  for(let i = 0; i < times; i++){  
+    setInterval((() => {conn.write('Move: up')}), 500)
+  } 
+}
 
 const connect = function() {
   const conn = net.createConnection({ 
@@ -12,8 +17,19 @@ const connect = function() {
   conn.on('connect', () => {
     
     console.log('CONNECTED TO SERVER');
+
+    conn.write('Name:  PSB');
+
+
+
+
+
+
+
+    moveUp(50, conn);
+    
   });
-  conn.write('Name:  PSB');
+    
 
 
   conn.on('data',(data) => {
@@ -22,5 +38,14 @@ const connect = function() {
 
   return conn;
 }
+
+
+
+
+
+
+
+
+
 
 module.exports = {connect}
