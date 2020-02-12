@@ -20,12 +20,6 @@ const connect = function() {
 
     conn.write('Name:  PSB');
 
-
-
-
-
-
-
     //moveUp(50, conn);
     
   });
