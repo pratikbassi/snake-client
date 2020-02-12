@@ -26,7 +26,7 @@ const connect = function() {
 
 
 
-    moveUp(50, conn);
+    //moveUp(50, conn);
     
   });
     
